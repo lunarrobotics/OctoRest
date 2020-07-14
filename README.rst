@@ -2,6 +2,23 @@
 OctoRest 
 ===========================
 
+.. image:: https://pepy.tech/badge/octorest
+	:target: https://pepy.tech/project/octorest
+	:alt: Downloads
+
+.. image:: https://img.shields.io/pypi/l/ansicolortags.svg
+	:target: https://pypi.python.org/pypi/ansicolortags/
+	:alt: PyPI license
+
+.. image:: https://badge.fury.io/py/erichek.svg
+	:target: https://badge.fury.io/py/erichek
+	:alt: PyPI version
+
+.. image:: https://img.shields.io/pypi/pyversions/erichek.svg
+	:target: https://img.shields.io/pypi/pyversions/erichek.svg
+	:alt: Python version
+
+
 Python client library for OctoPrint REST API
 
 This is continued work after the great start by Miro Hrončok of covering the
