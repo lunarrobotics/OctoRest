@@ -482,7 +482,6 @@ class OctoRest:
         payload = {'recursive': str(recursive).lower()}
         return self._get('/api/files/{}/{}'.format(location, filename), params=payload)
 
-
     def upload(self, file, *, location='local',
                select=False, print=False, userdata=None, path=None):
         """Upload file or create folder
@@ -492,18 +491,14 @@ class OctoRest:
         It can be a path or a tuple with a filename and a file-like object
         """
         with self._file_tuple(file) as file_tuple:
-            files = {'file': file_tuple}
-            data = {
-                'select': str(select).lower(),
-                'print': str(print).lower()
-            }
+            files = {'file': file_tuple, 'select': (None, select), 'print': (None, print)}
             if userdata:
-                data['userdata'] = userdata
+                files['userdata'] = (None, userdata)
             if path:
-                data['path'] = path
+                files['path'] = (None, path)
 
             return self._post('/api/files/{}'.format(location),
-                              files=files, json=data)
+                              files=files)
 
     def new_folder(self, folder_name, location='local'):
         """Upload file or create folder
