@@ -45,7 +45,7 @@ pytz==2019.3
 PyYAML==5.4
 regex==2019.12.9
 requests==2.22.0
-rsa==4.0
+rsa==4.7
 sarge==0.1.5.post0
 semantic-version==2.8.3
 sentry-sdk==0.13.2
