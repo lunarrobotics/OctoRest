@@ -52,7 +52,7 @@ sentry-sdk==0.13.2
 six==1.13.0
 tornado==4.5.3
 Unidecode==0.4.21
-urllib3==1.25.7
+urllib3==1.26.5
 watchdog==0.9.0
 wcwidth==0.1.7
 webassets==0.12.1
