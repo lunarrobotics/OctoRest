@@ -172,6 +172,18 @@ class OctoRest:
         Retrieve information regarding server and API version
         """
         return self._get('/api/version')
+
+    ##############
+    ### LOGIN  ###
+    ##############
+
+    def current_user(self):
+        """Current User
+        https://docs.octoprint.org/en/master/api/general.html#current-user
+
+        Retrieves information about the current user.
+        """
+        return self._get('/api/currentuser')
     
     ###########################
     ### APPS - SESSION KEYS ###
