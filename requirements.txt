@@ -2,7 +2,7 @@ appdirs==1.4.3
 argh==0.26.2
 attrs==19.3.0
 awesome-slugify==1.6.5
-Babel==2.7.0
+Babel==2.9.1
 betamax==0.8.1
 betamax-serializers==0.2.1
 blinker==1.4
