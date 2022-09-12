@@ -827,7 +827,7 @@ class OctoRest:
         return self._hwinfo('/api/printer', exclude=exclude,
                             history=history, limit=limit)
     
-    def jog(self, x=None, y=None, z=None):
+    def jog(self, x=None, y=None, z=None, absolute=False, speed=None):
         """Issue a print head command
         http://docs.octoprint.org/en/master/api/printer.html#issue-a-print-head-command
 
@@ -842,6 +842,15 @@ class OctoRest:
 
         z: Optional. Amount to jog print head on z axis, must be a valid
         number corresponding to the distance to travel in mm.
+
+        absolute: Optional. Boolean value specifying whether to move relative to current
+        position (provided axes values are relative amounts) or to absolute position
+        (provided axes values are coordinates.
+
+        speed: Optional. Speed at which to move. If not provided, minimum speed for all
+        selected axes from printer profile will be used. If provided but false, no speed
+        parameter will be appended to the command. Otherwise interpreted as an integer
+        signifying the speed in mm/min, to append to the command.
         """
         data = {'command': 'jog'}
         if x:
@@ -850,6 +859,10 @@ class OctoRest:
             data['y'] = y
         if z:
             data['z'] = z
+        if absolute:
+            data['absolute'] = absolute
+        if speed:
+            data['speed'] = speed
         self._post('/api/printer/printhead', json=data, ret=False)
 
     def home(self, axes=None):
